@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impresiones 3D a Medida</title>
+  <!-- Visor 3D de Google para modelos interactivos -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+  <style>
+    :root {
+      --primary-color: #111;
+      --accent-color: #25D366;
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-main: #333333;
+      --text-muted: #666666;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 15px;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 0 10px 0;
+    }
+
+    header h1 {
+      margin: 0 0 5px 0;
+      font-size: 1.8rem;
+      color: var(--primary-color);
+    }
+
+    header p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Banner Principal de Ideas Personalizadas */
+    .custom-idea-banner {
+      background: linear-gradient(135deg, #111111, #2b2b2b);
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 20px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .custom-idea-banner h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .custom-idea-banner p {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      color: #cccccc;
+      line-height: 1.4;
+    }
+
+    .btn-whatsapp {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      box-shadow: 0 3px 6px rgba(37, 211, 102, 0.3);
+      transition: transform 0.2s;
+    }
+
+    .btn-whatsapp:active {
+      transform: scale(0.96);
+    }
+
+    h3.section-title {
+      font-size: 1.2rem;
+      margin: 25px 0 15px 0;
+      border-left: 4px solid var(--primary-color);
+      padding-left: 8px;
+    }
+
+    /* Grilla de Catálogo */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card img, .card model-viewer {
+      width: 100%;
+      height: 110px;
+      border-radius: 6px;
+      object-fit: cover;
+      background: #eee;
+    }
+
+    .card h4 {
+      margin: 10px 0 4px 0;
+      font-size: 0.95rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .tag {
+      background: #e9ecef;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      align-self: flex-start;
+      margin-bottom: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header>
+    <h1>Alu Impresiones 3D</h1>
+    <p>Llevamos tus ideas del papel a la realidad</p>
+  </header>
+
+  <!-- SECCIÓN CLAVE: TUS IDEAS PERSONALIZADAS -->
+  <div class="custom-idea-banner">
+    <h2>¿Tienes una idea en mente?</h2>
+    <p>Mándame un dibujo, una foto o solo describe lo que quieres hacer. ¡Lo diseñamos e imprimimos a medida para ti!</p>
+    <a class="btn-whatsapp" href="https://wa.me/56952340397?text=Hola!%20Vi%20tu%20tarjeta%203D%20y%20tengo%20una%20idea%20en%20mente..." target="_blank">
+      💬 Cotizar mi idea por WhatsApp
+    </a>
+  </div>
+
+  <h3 class="section-title">Lo que podemos hacer</h3>
+
+  <!-- CATÁLOGO DE SECCIONES -->
+  <div class="grid">
+
+    <!-- Anime -->
+    <div class="card">
+      <div>
+        <span class="tag">Anime</span>
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="Anime">
+        <h4>Figuras & Bustos</h4>
+      </div>
+      <p>Personajes y llaveros de tus series favoritas.</p>
+    </div>
+
+    <!-- Marvel / DC -->
+    <div class="card">
+      <div>
+        <span class="tag">Marvel / DC</span>
+        <img src="https://images.unsplash.com/photo-1635863138275-d9b3329feb51?w=300" alt="Superheroes">
+        <h4>Réplicas & Soportes</h4>
+      </div>
+      <p>Cascos, bustos y accesorios de superhéroes.</p>
+    </div>
+
+    <!-- Modelado de Personas -->
+    <div class="card">
+      <div>
+        <span class="tag">Personalizado</span>
+        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=300" alt="Litofanías">
+        <h4>Litofanías y Retratos</h4>
+      </div>
+      <p>Tus fotos convertidas en lámparas y cuadros 3D.</p>
+    </div>
+
+    <!-- Utilidades / Llaveros -->
+    <div class="card">
+      <div>
+        <span class="tag">Utilidad</span>
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=300" alt="Utilidades">
+        <h4>Repuestos & Llaveros</h4>
+      </div>
+      <p>Soluciones prácticas para el hogar y marcas.</p>
+    </div>
+
+  </div>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>© 2026 • Impresiones 3D. Calidad y precisión capa por capa.</p>
+  </footer>
+
+</body>
+</html>
