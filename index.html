@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impresiones 3D a Medida</title>
+  <title>Alu Impresiones 3D</title>
   <!-- Visor 3D de Google para modelos interactivos -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
   <style>
@@ -14,6 +14,17 @@
       --card-bg: #ffffff;
       --text-main: #333333;
       --text-muted: #666666;
+      --tag-bg: #e9ecef;
+    }
+
+    /* Variables para el Modo Oscuro */
+    body.dark-mode {
+      --primary-color: #f1f1f1;
+      --bg-color: #121212;
+      --card-bg: #1e1e1e;
+      --text-main: #f1f1f1;
+      --text-muted: #aaaaaa;
+      --tag-bg: #2d2d2d;
     }
 
     body {
@@ -25,11 +36,41 @@
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Barra Superior (Instagram y Modo Oscuro) */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .btn-instagram {
+      background: #E1306C;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+
+    .btn-mode {
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: none;
+      background: var(--primary-color);
+      color: var(--bg-color);
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: bold;
     }
 
     header {
       text-align: center;
-      padding: 20px 0 10px 0;
+      padding: 10px 0 10px 0;
     }
 
     header h1 {
@@ -42,6 +83,31 @@
       margin: 0;
       color: var(--text-muted);
       font-size: 0.95rem;
+    }
+
+    /* Buscador */
+    .search-input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin: 15px 0 5px 0;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      background: var(--card-bg);
+      color: var(--text-main);
+    }
+
+    /* Mensaje No Encontrado */
+    #no-encontrado {
+      display: none;
+      text-align: center;
+      padding: 15px;
+      background: #fff3cd;
+      color: #856404;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
     }
 
     /* Banner Principal de Ideas Personalizadas */
@@ -108,6 +174,12 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .card:active {
+      transform: scale(0.98);
     }
 
     .card img, .card model-viewer {
@@ -121,6 +193,7 @@
     .card h4 {
       margin: 10px 0 4px 0;
       font-size: 0.95rem;
+      color: var(--text-main);
     }
 
     .card p {
@@ -130,7 +203,8 @@
     }
 
     .tag {
-      background: #e9ecef;
+      background: var(--tag-bg);
+      color: var(--text-main);
       font-size: 0.7rem;
       padding: 2px 6px;
       border-radius: 4px;
@@ -152,11 +226,29 @@
 </head>
 <body>
 
+  <!-- BARRA SUPERIOR (Instagram y Modo Oscuro) -->
+  <div class="top-bar">
+    <!-- Reemplaza "tu_cuenta_ig" con tu usuario real de Instagram -->
+    <a href="https://instagram.com/tu_cuenta_ig" target="_blank" class="btn-instagram">📷 Instagram</a>
+    <button onclick="toggleDarkMode()" class="btn-mode">🌙 / ☀️ Modo</button>
+  </div>
+
   <!-- ENCABEZADO -->
   <header>
     <h1>Alu Impresiones 3D</h1>
     <p>Llevamos tus ideas del papel a la realidad</p>
   </header>
+
+  <!-- BUSCADOR INTELIGENTE -->
+  <input type="text" id="buscador" class="search-input" placeholder="🔍 Busca anime, marvel, llaveros, repuestos..." onkeyup="filtrarProductos()">
+
+  <!-- MENSAJE SI NO SE ENCUENTRA -->
+  <div id="no-encontrado">
+    <p style="margin: 0 0 10px 0;">No se encontró exactamente lo que buscas, pero no te preocupes manda un mensaje y lo buscaremos enseguida e incluso lo podremos llegar a modelar.</p>
+    <a href="https://wa.me/56952340397?text=Hola!%20Busqué%20algo%20en%20tu%20web%20y%20no%20lo%20encontré,%20¿lo%20pueden%20modelar?" target="_blank" style="display:inline-block; background:#25D366; color:white; padding:8px 14px; border-radius:5px; text-decoration:none; font-weight:bold; font-size: 0.85rem;">
+      💬 ¡Pedir que lo modelen por WhatsApp!
+    </a>
+  </div>
 
   <!-- SECCIÓN CLAVE: TUS IDEAS PERSONALIZADAS -->
   <div class="custom-idea-banner">
@@ -173,17 +265,14 @@
   <div class="grid">
 
     <!-- Anime -->
-    <!-- Anime -->
-    <a href="anime.html" style="text-decoration: none; color: inherit;">
-      <div class="card">
-        <div>
-          <span class="tag">Anime</span>
-          <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="Anime">
-          <h4>Figuras & Bustos ➔</h4>
-        </div>
-        <p>Personajes y llaveros de tus series favoritas.</p>
+    <div class="card" onclick="window.location.href='anime.html'">
+      <div>
+        <span class="tag">Anime</span>
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="Anime">
+        <h4>Figuras & Bustos ➔</h4>
       </div>
-    </a>
+      <p>Personajes y llaveros de tus series favoritas.</p>
+    </div>
 
     <!-- Marvel / DC -->
     <div class="card">
@@ -215,22 +304,82 @@
       <p>Soluciones prácticas para el hogar y marcas.</p>
     </div>
 
-    <!-- Modelado de personas -->
+    <!-- Utilidades / Llaveros -->
     <div class="card">
       <div>
-        <span class="tag">Modelado de personas</span>
-        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=300" alt="Modelados de personas">
-        <h4>Trae a la realidad una foto de un ser querido</h4>
+        <span class="tag">Decorativos</span>
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=300" alt="Decorativos">
+        <h4>Decorativos</h4>
       </div>
-      <p>Soluciones prácticas para el hogar y marcas.</p>
+      <p>Cosas bonitas y personalizadas para tu hogar</p>
+    </div>
+
+    <!-- Modelado de personas (Retratos 3D) -->
+    <div class="card">
+      <div>
+        <span class="tag">Modelado</span>
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=300" alt="Modelados de personas">
+        <h4>Retratos de Seres Queridos</h4>
+      </div>
+      <p>Trae a la realidad una foto especial.</p>
+    </div>
+
+    <!-- +18 -->
+    <div class="card" onclick="verificarEdad('adult.html')">
+      <div>
+        <span class="tag" style="background: #ff4d4d; color: white;">+18 / Exclusivo</span>
+        <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=300" alt="+18">
+        <h4>Contenido Adulto</h4>
+      </div>
+      <p>Requiere confirmación de edad.</p>
     </div>
 
   </div>
 
   <!-- PIE DE PÁGINA -->
   <footer>
-    <p>© 2026 • Impresiones 3D. Calidad y precisión capa por capa.</p>
+    <p>© 2026 • Alu Impresiones 3D. Calidad y precisión capa por capa.</p>
   </footer>
+
+  <!-- SCRIPTS DE FUNCIONALIDAD -->
+  <script>
+    // Función para alternar modo oscuro y claro
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Buscador interactivo en tiempo real
+    function filtrarProductos() {
+      let input = document.getElementById('buscador').value.toLowerCase();
+      let cards = document.getElementsByClassName('card');
+      let encontrados = 0;
+
+      for (let i = 0; i < cards.length; i++) {
+        let textoCard = cards[i].innerText.toLowerCase();
+        if (textoCard.includes(input)) {
+          cards[i].style.display = "";
+          encontrados++;
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+
+      let mensajeNoEncontrado = document.getElementById('no-encontrado');
+      if (encontrados === 0 && input !== "") {
+        mensajeNoEncontrado.style.display = "block";
+      } else {
+        mensajeNoEncontrado.style.display = "none";
+      }
+    }
+
+    // Verificación de edad para la sección +18
+    function verificarEdad(urlDestino) {
+      let esMayor = confirm("⚠️ Contenido exclusivo para mayores de 18 años.\n\n¿Confirmas que eres mayor de edad?");
+      if (esMayor) {
+        window.location.href = urlDestino;
+      }
+    }
+  </script>
 
 </body>
 </html>
