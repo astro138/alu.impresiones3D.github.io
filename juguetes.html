@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alu Impresiones 3D - juguetes</title>
+  <style>
+    body { font-family: sans-serif; background: #121212; color: #fff; padding: 20px; max-width: 800px; margin: auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
+    .card { background: #1e1e1e; padding: 15px; border-radius: 8px; text-align: center; }
+    .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 5px; }
+    .card-wide { grid-column: span 2; }
+    .gallery-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .gallery-2col img { width: 100%; height: 120px; object-fit: cover; }
+    .btn-whatsapp { display: inline-block; background: #25D366; color: white; padding: 10px; border-radius: 20px; text-decoration: none; margin-top: 10px; font-weight: bold; }
+    .tag { background: #333; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; }
+    .model-container { background: #1e1e1e; padding: 20px; margin-bottom: 20px; border-radius: 10px; }
+    .gallery { display: flex; gap: 10px; overflow-x: auto; margin-bottom: 15px; }
+    .gallery img { height: 200px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <a href="index.html" style="color: #aaa; text-decoration: none;">← Volver al inicio</a>
+  <h1>juguetes</h1>
+  <div class="grid">
+    
+    <!-- 100 patos -->
+    <div class="card card-wide">
+      <span class="tag">2 Variantes Disponibles</span>
+      <h4>100 patos</h4>
+      <p class="desc">Opciones disponibles para este diseño:</p>
+      <div class="gallery-2col">
+        <div><img src="100_patos_01.jpg" alt="100 patos"><p>Variante 1</p></div><div><img src="100_patos_02.jpg" alt="100 patos"><p>Variante 2</p></div>
+      </div>
+      <a class="btn-whatsapp" href="https://wa.me/56952340397?text=Hola!%20Me%20interesa%20el%20modelo%20de%20100 patos" target="_blank">Cotizar</a>
+    </div>
+
+    <!-- ajedres -->
+    <div class="card">
+      <span class="tag">Modelo Disponible</span>
+      <img src="placeholder.jpg" alt="ajedres 3D">
+      <h4>ajedres</h4>
+      <p class="desc">Figura coleccionable / Impresión 3D.</p>
+      <a class="btn-whatsapp" href="https://wa.me/56952340397?text=Hola!%20Me%20interesa%20el%20modelo%20de%20ajedres" target="_blank">Cotizar</a>
+    </div>
+  </div>
+</body>
+</html>
