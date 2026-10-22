@@ -3,152 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sección Anime - Alu Impresiones 3D</title>
+  <title>Alu Impresiones 3D - anime</title>
   <style>
-    :root {
-      --primary-color: #111;
-      --accent-color: #25D366;
-      --bg-color: #f8f9fa;
-      --card-bg: #ffffff;
-      --text-main: #333333;
-      --text-muted: #666666;
-      --tag-bg: #e9ecef;
-    }
-
-    body.dark-mode {
-      --primary-color: #f1f1f1;
-      --bg-color: #121212;
-      --card-bg: #1e1e1e;
-      --text-main: #f1f1f1;
-      --text-muted: #aaaaaa;
-      --tag-bg: #2d2d2d;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin: 0;
-      padding: 15px;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-
-    .btn-volver {
-      background: var(--primary-color);
-      color: var(--bg-color);
-      text-decoration: none;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: bold;
-    }
-
-    .btn-mode {
-      padding: 6px 12px;
-      border-radius: 20px;
-      border: none;
-      background: var(--primary-color);
-      color: var(--bg-color);
-      cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: bold;
-    }
-
-    header { text-align: center; padding: 10px 0; }
-    h1 { margin: 0 0 5px 0; font-size: 1.5rem; color: var(--primary-color); }
-    p { color: var(--text-muted); font-size: 0.9rem; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 12px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      cursor: pointer;
-    }
-
-    .card img {
-      width: 100%;
-      height: 120px;
-      border-radius: 6px;
-      object-fit: cover;
-      background: #eee;
-    }
-
-    .card h4 { margin: 8px 0 4px 0; font-size: 0.9rem; color: var(--text-main); }
-    .card p { margin: 0; font-size: 0.75rem; color: var(--text-muted); }
-
-    .tag {
-      background: var(--tag-bg);
-      color: var(--text-main);
-      font-size: 0.7rem;
-      padding: 2px 6px;
-      border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 6px;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
+    body { font-family: sans-serif; background: #121212; color: #fff; padding: 20px; max-width: 800px; margin: auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
+    .card { background: #1e1e1e; padding: 15px; border-radius: 8px; text-align: center; }
+    .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 5px; }
+    .card-wide { grid-column: span 2; }
+    .gallery-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .gallery-2col img { width: 100%; height: 120px; object-fit: cover; }
+    .btn-whatsapp { display: inline-block; background: #25D366; color: white; padding: 10px; border-radius: 20px; text-decoration: none; margin-top: 10px; font-weight: bold; }
+    .tag { background: #333; padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; }
+    .model-container { background: #1e1e1e; padding: 20px; margin-bottom: 20px; border-radius: 10px; }
+    .gallery { display: flex; gap: 10px; overflow-x: auto; margin-bottom: 15px; }
+    .gallery img { height: 200px; border-radius: 6px; }
   </style>
 </head>
 <body>
-
-  <div class="top-bar">
-    <a class="btn-volver" href="index.html">← Volver</a>
-    <button onclick="toggleDarkMode()" class="btn-mode">🌙 / ☀️ Modo</button>
-  </div>
-
-  <header>
-    <h1>Sección Anime & Manga 🍥</h1>
-    <p>Figuras, bustos y personajes personalizados</p>
-  </header>
-
+  <a href="index.html" style="color: #aaa; text-decoration: none;">← Volver al inicio</a>
+  <h1>anime</h1>
   <div class="grid">
-    <!-- SUBSECCIÓN POKEMON -->
-    <div class="card" onclick="window.location.href='pokemon.html'">
-      <span class="tag" style="background: #ffcb05; color: #3b5ca8;">Especial</span>
-      <img src="https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=300" alt="Pokemon">
-      <h4>Pokémon ➔</h4>
-      <p>Figuras y Pokéballs impresas en 3D.</p>
+    
+    <!-- dragonball -->
+    <div class="card">
+      <span class="tag">Modelo Disponible</span>
+      <img src="placeholder.jpg" alt="dragonball 3D">
+      <h4>dragonball</h4>
+      <p class="desc">Figura coleccionable / Impresión 3D.</p>
+      <a class="btn-whatsapp" href="https://wa.me/56952340397?text=Hola!%20Me%20interesa%20el%20modelo%20de%20dragonball" target="_blank">Cotizar</a>
     </div>
 
+    <!-- pokemon -->
     <div class="card">
-      <span class="tag">General</span>
-      <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="Figura">
-      <h4>Bustos Detallados</h4>
-      <p>Impreso en alta definición.</p>
+      <span class="tag">Modelo Disponible</span>
+      <img src="placeholder.jpg" alt="pokemon 3D">
+      <h4>pokemon</h4>
+      <p class="desc">Figura coleccionable / Impresión 3D.</p>
+      <a class="btn-whatsapp" href="https://wa.me/56952340397?text=Hola!%20Me%20interesa%20el%20modelo%20de%20pokemon" target="_blank">Cotizar</a>
     </div>
   </div>
-
-  <script>
-    if (localStorage.getItem('darkMode') === 'enabled') {
-      document.body.classList.add('dark-mode');
-    }
-
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-      if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('darkMode', 'enabled');
-      } else {
-        localStorage.setItem('darkMode', 'disabled');
-      }
-    }
-  </script>
 </body>
 </html>
