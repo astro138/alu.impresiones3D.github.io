@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alu Impresiones 3D</title>
-  <!-- Visor 3D de Google para modelos interactivos -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
   <style>
     :root {
@@ -16,8 +15,6 @@
       --text-muted: #666666;
       --tag-bg: #e9ecef;
     }
-
-    /* Variables para el Modo Oscuro */
     body.dark-mode {
       --primary-color: #f1f1f1;
       --bg-color: #121212;
@@ -26,7 +23,6 @@
       --text-muted: #aaaaaa;
       --tag-bg: #2d2d2d;
     }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
@@ -38,15 +34,12 @@
       margin-right: auto;
       transition: background 0.3s, color 0.3s;
     }
-
-    /* Barra Superior (Instagram y Modo Oscuro) */
     .top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 10px;
     }
-
     .btn-instagram {
       background: #E1306C;
       color: white;
@@ -56,7 +49,6 @@
       font-size: 0.85rem;
       font-weight: bold;
     }
-
     .btn-mode {
       padding: 6px 12px;
       border-radius: 20px;
@@ -67,25 +59,20 @@
       font-size: 0.85rem;
       font-weight: bold;
     }
-
     header {
       text-align: center;
       padding: 10px 0 10px 0;
     }
-
     header h1 {
       margin: 0 0 5px 0;
       font-size: 1.8rem;
       color: var(--primary-color);
     }
-
     header p {
       margin: 0;
       color: var(--text-muted);
       font-size: 0.95rem;
     }
-
-    /* Buscador */
     .search-input {
       width: 100%;
       padding: 12px;
@@ -97,8 +84,6 @@
       background: var(--card-bg);
       color: var(--text-main);
     }
-
-    /* Mensaje No Encontrado */
     #no-encontrado {
       display: none;
       text-align: center;
@@ -109,8 +94,6 @@
       margin-bottom: 15px;
       font-size: 0.9rem;
     }
-
-    /* Banner Principal de Ideas Personalizadas */
     .custom-idea-banner {
       background: linear-gradient(135deg, #111111, #2b2b2b);
       color: white;
@@ -120,20 +103,17 @@
       margin: 20px 0;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-
     .custom-idea-banner h2 {
       margin-top: 0;
       font-size: 1.3rem;
       margin-bottom: 8px;
     }
-
     .custom-idea-banner p {
       font-size: 0.9rem;
       margin-bottom: 15px;
       color: #cccccc;
       line-height: 1.4;
     }
-
     .btn-whatsapp {
       display: inline-block;
       background-color: var(--accent-color);
@@ -146,11 +126,9 @@
       box-shadow: 0 3px 6px rgba(37, 211, 102, 0.3);
       transition: transform 0.2s;
     }
-
     .btn-whatsapp:active {
       transform: scale(0.96);
     }
-
     h3.section-title {
       font-size: 1.2rem;
       margin: 25px 0 15px 0;
@@ -158,14 +136,11 @@
       padding-left: 8px;
       color: var(--primary-color);
     }
-
-    /* Grilla de Catálogo */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
     }
-
     .card {
       background: var(--card-bg);
       border-radius: 10px;
@@ -178,11 +153,9 @@
       cursor: pointer;
       transition: transform 0.2s;
     }
-
     .card:active {
       transform: scale(0.98);
     }
-
     .card img, .card model-viewer {
       width: 100%;
       height: 110px;
@@ -190,19 +163,16 @@
       object-fit: cover;
       background: #eee;
     }
-
     .card h4 {
       margin: 10px 0 4px 0;
       font-size: 0.95rem;
       color: var(--text-main);
     }
-
     .card p {
       margin: 0;
       font-size: 0.8rem;
       color: var(--text-muted);
     }
-
     .tag {
       background: var(--tag-bg);
       color: var(--text-main);
@@ -214,7 +184,6 @@
       font-weight: 600;
       text-transform: uppercase;
     }
-
     footer {
       text-align: center;
       margin-top: 40px;
@@ -227,22 +196,18 @@
 </head>
 <body>
 
-  <!-- BARRA SUPERIOR (Instagram y Modo Oscuro) -->
   <div class="top-bar">
     <a href="https://instagram.com/tu_cuenta_ig" target="_blank" class="btn-instagram">📷 Instagram</a>
     <button onclick="toggleDarkMode()" class="btn-mode">🌙 / ☀️ Modo</button>
   </div>
 
-  <!-- ENCABEZADO -->
   <header>
     <h1>Alu Impresiones 3D</h1>
     <p>Llevamos tus ideas del papel a la realidad</p>
   </header>
 
-  <!-- BUSCADOR INTELIGENTE -->
   <input type="text" id="buscador" class="search-input" placeholder="🔍 Busca anime, marvel, llaveros, repuestos..." onkeyup="filtrarProductos()">
 
-  <!-- MENSAJE SI NO SE ENCUENTRA -->
   <div id="no-encontrado">
     <p style="margin: 0 0 10px 0;">❌ No encontré exactamente lo que buscas en stock.</p>
     <a href="https://wa.me/56952340397?text=Hola!%20Busqué%20algo%20en%20tu%20web%20y%20no%20lo%20encontré,%20¿lo%20pueden%20modelar?" target="_blank" style="display:inline-block; background:#25D366; color:white; padding:8px 14px; border-radius:5px; text-decoration:none; font-weight:bold; font-size: 0.85rem;">
@@ -250,7 +215,6 @@
     </a>
   </div>
 
-  <!-- SECCIÓN CLAVE: TUS IDEAS PERSONALIZADAS -->
   <div class="custom-idea-banner">
     <h2>¿Tienes una idea en mente?</h2>
     <p>Mándame un dibujo, una foto o solo describe lo que quieres hacer. ¡Lo diseñamos e imprimimos a medida para ti!</p>
@@ -261,84 +225,108 @@
 
   <h3 class="section-title">Lo que podemos hacer</h3>
 
-  <!-- CATÁLOGO DE SECCIONES -->
   <div class="grid">
-
-    <!-- Anime -->
-    <div class="card" onclick="window.location.href='anime.html'">
-      <div>
-        <span class="tag">Anime</span>
-        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="Anime">
-        <h4>Figuras & Bustos ➔</h4>
-      </div>
-      <p>Personajes y llaveros de tus series favoritas.</p>
-    </div>
-
-    <!-- Marvel / DC -->
-    <div class="card">
-      <div>
-        <span class="tag">Marvel / DC</span>
-        <img src="https://images.unsplash.com/photo-1635863138275-d9b3329feb51?w=300" alt="Superheroes">
-        <h4>Réplicas & Soportes</h4>
-      </div>
-      <p>Cascos, bustos y accesorios de superhéroes.</p>
-    </div>
-
-    <!-- Modelado de Personas -->
-    <div class="card">
-      <div>
-        <span class="tag">Personalizado</span>
-        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=300" alt="Litofanías">
-        <h4>Litofanías y Retratos</h4>
-      </div>
-      <p>Tus fotos convertidas en lámparas y cuadros 3D.</p>
-    </div>
-
-    <!-- Utilidades / Llaveros -->
-    <div class="card">
-      <div>
-        <span class="tag">Utilidad</span>
-        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=300" alt="Utilidades">
-        <h4>Repuestos & Llaveros</h4>
-      </div>
-      <p>Soluciones prácticas para el hogar y marcas.</p>
-    </div>
-
-    <!-- Modelado de personas -->
-    <div class="card">
-      <div>
-        <span class="tag">Modelado</span>
-        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=300" alt="Modelados de personas">
-        <h4>Retratos de Seres Queridos</h4>
-      </div>
-      <p>Trae a la realidad una foto especial.</p>
-    </div>
-
+    
     <!-- +18 -->
     <div class="card" onclick="verificarEdad('adult.html')">
       <div>
         <span class="tag" style="background: #ff4d4d; color: white;">+18 / Exclusivo</span>
-        <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=300" alt="+18">
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="+18">
         <h4>Contenido Adulto</h4>
       </div>
       <p>Requiere confirmación de edad.</p>
     </div>
 
+    <!-- anime -->
+    <div class="card" onclick="window.location.href='anime.html'">
+      <div>
+        <span class="tag">anime</span>
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="anime">
+        <h4>anime ➔</h4>
+      </div>
+      <p>Modelos y figuras de anime.</p>
+    </div>
+
+    <!-- juguetes -->
+    <div class="card" onclick="window.location.href='juguetes.html'">
+      <div>
+        <span class="tag">juguetes</span>
+        <img src="100_patos_01.jpg" alt="juguetes">
+        <h4>juguetes ➔</h4>
+      </div>
+      <p>Modelos y figuras de juguetes.</p>
+    </div>
+
+    <!-- macetas -->
+    <div class="card" onclick="window.location.href='macetas.html'">
+      <div>
+        <span class="tag">macetas</span>
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="macetas">
+        <h4>macetas ➔</h4>
+      </div>
+      <p>Modelos y figuras de macetas.</p>
+    </div>
+
+    <!-- marvel -->
+    <div class="card" onclick="window.location.href='marvel.html'">
+      <div>
+        <span class="tag">marvel</span>
+        <img src="hulk_01.jpg" alt="marvel">
+        <h4>marvel ➔</h4>
+      </div>
+      <p>Modelos y figuras de marvel.</p>
+    </div>
+
+    <!-- navidad -->
+    <div class="card" onclick="window.location.href='navidad.html'">
+      <div>
+        <span class="tag">navidad</span>
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="navidad">
+        <h4>navidad ➔</h4>
+      </div>
+      <p>Modelos y figuras de navidad.</p>
+    </div>
+
+    <!-- terror -->
+    <div class="card" onclick="window.location.href='terror.html'">
+      <div>
+        <span class="tag">terror</span>
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="terror">
+        <h4>terror ➔</h4>
+      </div>
+      <p>Modelos y figuras de terror.</p>
+    </div>
+
+    <!-- torsos -->
+    <div class="card" onclick="window.location.href='torsos.html'">
+      <div>
+        <span class="tag">torsos</span>
+        <img src="apolo_01.jpg" alt="torsos">
+        <h4>torsos ➔</h4>
+      </div>
+      <p>Modelos y figuras de torsos.</p>
+    </div>
+
+    <!-- utiles -->
+    <div class="card" onclick="window.location.href='utiles.html'">
+      <div>
+        <span class="tag">utiles</span>
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="utiles">
+        <h4>utiles ➔</h4>
+      </div>
+      <p>Modelos y figuras de utiles.</p>
+    </div>
   </div>
 
-  <!-- PIE DE PÁGINA -->
   <footer>
     <p>© 2026 • Alu Impresiones 3D. Calidad y precisión capa por capa.</p>
   </footer>
 
-  <!-- SCRIPTS DE FUNCIONALIDAD -->
   <script>
-    // 1. Cargar el modo oscuro guardado desde el primer momento
     if (localStorage.getItem('darkMode') === 'enabled') {
       document.body.classList.add('dark-mode');
     }
 
-    // 2. Función para alternar modo oscuro y guardarlo en la memoria del navegador
     function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
       if (document.body.classList.contains('dark-mode')) {
@@ -348,7 +336,6 @@
       }
     }
 
-    // Buscador interactivo en tiempo real
     function filtrarProductos() {
       let input = document.getElementById('buscador').value.toLowerCase();
       let cards = document.getElementsByClassName('card');
@@ -372,7 +359,6 @@
       }
     }
 
-    // Verificación de edad para la sección +18
     function verificarEdad(urlDestino) {
       let esMayor = confirm("⚠️ Contenido exclusivo para mayores de 18 años.\n\n¿Confirmas que eres mayor de edad?");
       if (esMayor) {
