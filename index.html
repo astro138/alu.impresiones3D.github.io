@@ -226,16 +226,6 @@
   <h3 class="section-title">Lo que podemos hacer</h3>
 
   <div class="grid">
-    
-    <!-- +18 -->
-    <div class="card" onclick="verificarEdad('adult.html')">
-      <div>
-        <span class="tag" style="background: #ff4d4d; color: white;">+18 / Exclusivo</span>
-        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="+18">
-        <h4>Contenido Adulto</h4>
-      </div>
-      <p>Requiere confirmación de edad.</p>
-    </div>
 
     <!-- anime -->
     <div class="card" onclick="window.location.href='anime.html'">
@@ -316,6 +306,17 @@
       </div>
       <p>Modelos y figuras de utiles.</p>
     </div>
+
+    <!-- +18 -->
+    <div class="card" onclick="pedirClave('adult.html')">
+      <div>
+        <span class="tag" style="background: #ff4d4d; color: white;">+18 / Exclusivo</span>
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=300" alt="+18">
+        <h4>Contenido Adulto</h4>
+      </div>
+      <p>Requiere confirmación de edad.</p>
+    </div>
+    
   </div>
 
   <footer>
@@ -363,6 +364,18 @@
       let esMayor = confirm("⚠️ Contenido exclusivo para mayores de 18 años.\n\n¿Confirmas que eres mayor de edad?");
       if (esMayor) {
         window.location.href = urlDestino;
+      }
+    }
+    function pedirClave(urlDestino) {
+      // 🔑 AQUÍ PUEDES CAMBIAR LA CONTRASEÑA POR LA QUE TÚ QUIERAS
+      let passwordCorrecta = "si, lo soy"; 
+
+      let ingreso = prompt("Contenido exclusivo para mayores de 18 años.\n\nContenido restringido. Ingresa la contraseña:");
+      
+      if (ingreso === passwordCorrecta) {
+        window.location.href = urlDestino;
+      } else if (ingreso !== null) { // Si le da a cancelar no muestra error
+        alert("❌ Contraseña incorrecta.");
       }
     }
   </script>
